@@ -1,11 +1,3 @@
----
- * Daha iyi erişim için sadece son sürüm dosyalar yüklenmiştir (version4).
- * Only the latest version files have been uploaded for better access (version4).
----
- * Bu proje deneysel amaçlıdır (Geliştirici ZAYN)
- * This project is experimental (Developer: ZAYN)
----
-
 # SwarmMind: Belirme, Adaptasyon ve Ko-Evrim Simülasyonu
 
 # SwarmMind: Emergence, Adaptation, and Co-evolution Simulation
