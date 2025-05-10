@@ -1,0 +1,98 @@
+# swarm_mind_v4/neat_config_v4.txt
+
+[NEAT]
+fitness_criterion     = max
+# Rekabetçi fitness negatif olabileceği için threshold dikkatli ayarlanmalı
+# Hedef (rekabetçi) fitness (bu değere ulaşılırsa evrim durur)
+fitness_threshold     = 5000
+# Popülasyon büyüklüğü (Hız için düşük)
+pop_size              = 30
+reset_on_extinction   = False
+
+[DefaultGenome]
+# Girdi (16 adet - V3 ile aynı, şimdilik)
+num_inputs              = 16
+# Çıktı (3 adet - V3 ile aynı)
+num_outputs             = 3
+# Başlangıçta gizli nöron yok
+num_hidden              = 0
+
+# --- Diğer Genom Parametreleri ---
+# Varsayılan aktivasyon fonksiyonu
+activation_default      = tanh
+activation_mutate_rate  = 0.1
+activation_options      = tanh sigmoid relu clamped gaussian
+
+aggregation_default     = sum
+aggregation_mutate_rate = 0.0
+aggregation_options     = sum product min max mean median
+
+bias_init_mean          = 0.0
+bias_init_stdev         = 1.0
+bias_max_value          = 10.0
+bias_min_value          = -10.0
+# Bias mutasyonunun ne kadar güçlü olacağı
+bias_mutate_power       = 0.5
+# Bias değerlerinin mutasyona uğrama oranı
+bias_mutate_rate        = 0.7
+# Bias değerinin tamamen değişme oranı
+bias_replace_rate       = 0.1
+
+compatibility_disjoint_coefficient = 1.0
+compatibility_weight_coefficient = 0.5
+
+# Yeni bağlantı ekleme olasılığı
+conn_add_prob           = 0.1
+# Bağlantı silme olasılığı
+conn_delete_prob        = 0.05
+
+enabled_default         = True
+enabled_mutate_rate     = 0.01
+
+# Geri beslemesiz ağ (FeedForward)
+feed_forward            = True
+# Başlangıç bağlantı tipi (full_direct: tüm girdiler çıktılara bağlı)
+initial_connection      = full_direct
+
+# Yeni nöron ekleme olasılığı
+node_add_prob           = 0.05
+# Nöron silme olasılığı
+node_delete_prob        = 0.02
+
+response_init_mean      = 1.0
+response_init_stdev     = 0.0
+response_max_value      = 10.0
+response_min_value      = -10.0
+response_mutate_power   = 0.0
+response_mutate_rate    = 0.0
+response_replace_rate   = 0.0
+
+weight_init_mean        = 0.0
+weight_init_stdev       = 1.0
+weight_max_value        = 10.0
+weight_min_value        = -10.0
+# Ağırlık mutasyonunun ne kadar güçlü olacağı
+weight_mutate_power     = 0.5
+# Ağırlıkların mutasyona uğrama oranı
+weight_mutate_rate      = 0.8
+# Ağırlıkların tamamen değişme oranı
+weight_replace_rate     = 0.1
+
+
+[DefaultSpeciesSet]
+# Tür uyumluluk eşiği
+compatibility_threshold = 3.0
+
+[DefaultStagnation]
+# Türün fitness'ı en iyi bireye göre mi ortalamaya göre mi?
+species_fitness_func = max
+# Bir tür kaç nesil gelişmezse yok sayılır
+max_stagnation       = 25
+# Her türden kaç en iyi birey korunur
+species_elitism      = 2
+
+[DefaultReproduction]
+# Popülasyonun kaç en iyi bireyi doğrudan sonraki nesle geçer
+elitism              = 2
+# Tür içindeki bireylerin ne kadarının üremeye katılabileceği
+survival_threshold   = 0.2
